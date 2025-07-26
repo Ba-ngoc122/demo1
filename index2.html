@@ -1560,23 +1560,26 @@
  
 <div id=yui3-css-stamp style=position:absolute!important;visibility:hidden!important bis_skin_checked=1 class=sf-hidden></div>
 <script>
-   	 const infoDiv = document.createElement('div');
-infoDiv.innerHTML = `
-  <div style="background-color: #f5f5f5; padding: 10px; border-bottom: 1px solid #ccc;">
-    <strong>Holly Poultry Inc</strong><br>
-    Address: 2121 Wicomico Street, Baltimore, MD 21230, United States<br>
-    Website: <a href="https://hollypoultry453.hempistadores.cloud/" target="_blank">https://hollypoultry453.hempistadores.cloud/</a><br>
-    Phone: (410) 727-6768
-  </div>
-`;
+  document.addEventListener("DOMContentLoaded", function () {
+    // Tạo thẻ chứa nội dung
+    const infoDiv = document.createElement('div');
+    infoDiv.innerHTML = `
+      <div style="background-color: #f5f5f5; padding: 10px; border-bottom: 1px solid #ccc;">
+        <strong>Holly Poultry Inc</strong><br>
+        Address: 2121 Wicomico Street, Baltimore, MD 21230, United States<br>
+        Website: <a href="https://hollypoultry453.hempistadores.cloud/" target="_blank">https://hollypoultry453.hempistadores.cloud/</a><br>
+        Phone: (410) 727-6768
+      </div>
+    `;
 
-// Tìm phần tử có class 'header-display-desktop'
-const header = document.querySelector('.header-display-desktop');
-
-// Chèn phần tử infoDiv vào trước phần header
-if (header && header.parentNode) {
-  header.parentNode.insertBefore(infoDiv, header);
-}
+    // Tìm phần tử header-announcement-bar-wrapper
+    const target = document.querySelector('.header-announcement-bar-wrapper');
+    
+    // Chèn infoDiv vào trước target
+    if (target && target.parentNode) {
+      target.parentNode.insertBefore(infoDiv, target);
+    }
+  });
 </script>
 </body>
 </html>
